@@ -1,0 +1,13 @@
+# Disable symbol order verification on macOS since building libc++.a adds extra symbols for some reason
+
+--- a/chrome/BUILD.gn
++++ b/chrome/BUILD.gn
+@@ -1195,7 +1195,7 @@ if (is_win) {
+ 
+   # TOOD(crbug/1163903#c8) - thakis@ look into why profile and coverage
+   # instrumentation adds these symbols in different orders
+-  if (!is_component_build && chrome_pgo_phase != 1) {
++  if (false) {
+     action("verify_chrome_framework_order") {
+       script = "//chrome/tools/build/mac/verify_order.py"
+       stamp_file = "$target_out_dir/run_$target_name.stamp"
