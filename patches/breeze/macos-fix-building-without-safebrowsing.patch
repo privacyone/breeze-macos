@@ -1,0 +1,10 @@
+--- a/chrome/browser/component_updater/registration.cc
++++ b/chrome/browser/component_updater/registration.cc
+@@ -128,7 +128,6 @@ void RegisterComponentsForUpdate(bool is_off_the_record_profile,
+ #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
+ #endif  // BUILDFLAG(ENABLE_NACL) && !defined(OS_ANDROID)
+ 
+-  RegisterSubresourceFilterComponent(cus);
+   RegisterFlocComponent(cus,
+                         g_browser_process->floc_sorting_lsh_clusters_service());
+   RegisterOptimizationHintsComponent(cus);

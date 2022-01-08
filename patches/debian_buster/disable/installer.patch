@@ -1,0 +1,14 @@
+description: avoid building chromium's installer, which is unused in debian
+author: Michael Gilbert <mgilbert@debian.org>
+
+--- a/BUILD.gn
++++ b/BUILD.gn
+@@ -79,8 +79,6 @@ group("gn_all") {
+     ":gn_visibility",
+     "//base:base_perftests",
+     "//base:base_unittests",
+-    "//chrome/installer",
+-    "//chrome/updater",
+     "//codelabs",
+     "//components:components_unittests",
+     "//components/gwp_asan:gwp_asan_unittests",

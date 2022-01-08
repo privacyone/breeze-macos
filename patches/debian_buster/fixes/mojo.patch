@@ -1,0 +1,13 @@
+description: fix mojo layout test build error
+author: Michael Gilbert <mgilbert@debian.org>
+
+--- a/content/shell/BUILD.gn
++++ b/content/shell/BUILD.gn
+@@ -249,7 +249,6 @@ static_library("content_shell_lib") {
+     "//content:dev_ui_content_resources",
+     "//content/app/resources",
+     "//content/public/common",
+-    "//content/test:content_test_mojo_bindings",
+     "//content/test:test_support",
+     "//device/bluetooth",
+     "//media",
