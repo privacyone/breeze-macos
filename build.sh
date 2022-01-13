@@ -73,12 +73,12 @@ then
     ninja -k 10 -C out/$_out_name chrome chromedriver chrome/installer/mac || { echo 'build failed' ; exit 0; }
     python "$_src_dir//out/$_out_name/Breeze Packaging/sign_chrome.py" \
     --identity D3D032D1F77838E42BFD41F732D08EBAC71A9FA3 \
+    --input out/$_out_name \
+    --output "$_root_dir/out/$_out_name" \
     # --notarize \
     # --notary-user @USERNAME \
     # --notary-password @PASSWORD 
 else
-    ninja -k 10 -C out/Default chrome chromedriver || { echo 'build failed' ; exit 0; }
-    xattr -csr out/Default/Breeze.app
     ninja -k 10 -C out/$_out_name chrome chromedriver || { echo 'build failed' ; exit 0; }
     xattr -csr out/$_out_name/Breeze.app
     # Using ad-hoc signing
