@@ -55,11 +55,16 @@ This will download and unpack archived chromium source files and required tools,
 ```
 sh apply_patches.sh
 ```
-If no previous patches have been applied, this will apply all Windows specific and core patches. Otherwise, it will only apply updated patches.
+If no previous patches have been applied, this will apply all macOS specific and core patches. Otherwise, it will only apply updated patches.
 
 ##### Building
+Building for x86_64
 ```
 sh build.sh
+```
+Building for ARM64
+```
+sh build.sh --arm-build
 ```
 This will start the build process. If it fails, you can fix the code, run the `build.sh` again and it will continue the build process from where it previously failed.
 

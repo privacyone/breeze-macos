@@ -14,7 +14,6 @@ _breeze_patches="$_main_repo/patches/core/breeze"
 _chromium_version=$(cat $_root_dir/core/chromium_version.txt)
 if [[ ! -d build/src/chrome ]]
 then
-    mkdir -p "$_src_dir/out/Default"
     mkdir -p "$_download_cache"
 
     "$_main_repo/utils/downloads.py" retrieve -i "$_main_repo/downloads.ini" "$_root_dir/downloads.ini" -c "$_download_cache"
